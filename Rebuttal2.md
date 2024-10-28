@@ -8,23 +8,23 @@ Preliminary experiments including node/edge features showed incredibly high, spa
 - Vectors including features are too sparse
 - They become mutually othogonal
 - Including features destroys vector similarity measures
-# Agnositicism
+## Agnositicism
 Omitting features provides: 
 - Dataset-Agnosticism
 - Scalability
 - Wide Applicability
-# Under-researched Structural Similarity Metrics
+## Under-researched Structural Similarity Metrics
 - Structural Similarity: significant research gaps [1]
 - Feature similarity: well-explored [2]
 - Composite methods using EmbCL with existing, robust feature similarity metrics are our next step
-# R~c~ Robustness 
+# R$_c$ Robustness 
 - Consistent across models/datasets.
 - Identifies when learning slows.
-- We limited R~c~ configurations in this work for clarity
+- We limited R$_c$ configurations in this work for clarity
 - We tested 24 schedules in preliminary work (Appx Tab 4)
 ## Robustness thorugh Simplicity
-  - Compares learning rate change between last k epochs and the preceeding k epochs
-  - Simple but effective and trasparent.
+- Compares learning rate change between last k epochs and the preceeding k epochs
+- Simple but effective and trasparent.
 ## Existing Methods' Challenges
 - Require specific tuning for model confidence and network activation [3]
 - Prevents model/dataset agnosticism 
