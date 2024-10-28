@@ -7,11 +7,10 @@ Preliminary experiments including node/edge features showed incredibly high, spa
 ## Sparse Embeddings/Vector Dissimilarity
 - Embedding vectors including features are too sparse. Most elements in an embedding are 0, and vectors share very few dimensions.
 - The sparsity causes vectors to become mutually othogonal which destroys vector similarity measures [Chakraborty 2021](#references).
-## Agnositicism
-Omitting features provides: 
-- Dataset-Agnosticism
-- Scalability
-- Wide Applicability
+- Omitting features provides: 
+  - Dataset-Agnosticism
+  - Scalability
+  - Wide Applicability
 ## Under-researched Structural Similarity Metrics
 - Structural Similarity: There are significant research gaps in characterizing the distribution of graph structures [Chikwendu 2023](#references).
 - Feature similarity: Conversely, measures of feature distibutions are well-explored [Khoshraftar 2024](#references).
