@@ -14,8 +14,8 @@ Omitting features provides:
 - Scalability
 - Wide Applicability
 ## Under-researched Structural Similarity Metrics
-- Structural Similarity: significant research gaps [1]
-- Feature similarity: well-explored [2]
+- Structural Similarity: significant research gaps [Chikwendu 2023](#references)
+- Feature similarity: well-explored [Khoshraftar 2024](#references)
 - Composite methods using EmbCL with existing, robust feature similarity metrics are our next step
 # R$_c$ Robustness 
 - Consistent across models/datasets.
@@ -26,7 +26,7 @@ Omitting features provides:
 - Compares learning rate change between last k epochs and the preceeding k epochs
 - Simple but effective and trasparent.
 ## Existing Methods' Challenges
-- Require specific tuning for model confidence and network activation [3]
+- Require specific tuning for model confidence and network activation [Bian 2024](#references)
 - Prevents model/dataset agnosticism 
 # Hyperparameter Sensitivity
 Hyperparameter tuning is promising. There are certainly optimal model configurations in conjuntion with EmbCL
@@ -48,6 +48,7 @@ Your critical feedback significantly strengthens our work. Thank you.
 Best regards,
 The Authors
 
-[1] Chikwendu, I. et al. A comprehensive survey on deep graph representation learning methods, Journal of Artificial Intelligence Research, 2023
-[2] Khoshraftar, S. and An A. A survey on graph representation learning methods, ACM Transactions on Intelligent Systems and Technology, 2024
-[3] Bian, K, and Rahul P. Machine learning optimization techniques: a Survey, classification, challenges, and Future Research Issues, Archives of Computational Methods in Engineering, 2024
+# References
+1. Chikwendu, I. et al. A comprehensive survey on deep graph representation learning methods, Journal of Artificial Intelligence Research, 2023
+1. Khoshraftar, S. and An A. A survey on graph representation learning methods, ACM Transactions on Intelligent Systems and Technology, 2024
+1. Bian, K, and Rahul P. Machine learning optimization techniques: a Survey, classification, challenges, and Future Research Issues, Archives of Computational Methods in Engineering, 2024
