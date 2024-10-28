@@ -44,7 +44,6 @@ The Authors
 # References
 1. Na, M., et al. [*Curriculum Learning for Small Code Language Models*](https://doi.org/10.48550/arXiv.2407.10194), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, 2024
 1. Errica, F. et al. [*A Fair Comparison of Graph Neural Networks for Graph Classification*](https://doi.org/10.48550/arXiv.1912.09893), Proceedings of the Eighth International Conference on Learning Representations, 2020.
-1. Brigato, L., and Iocchi, L. *A Close Look at Deep Learning with Small Data*, 25th International Conference on Pattern Recognition, 2021
-1. Cheng, H., et al. *Local to global learning: Gradually adding classes for training deep neural networks*, Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2019
-1. Hu, W. Leaderboards for graph property prediction, https://ogb.stanford.390
-edu/docs/leader_graphprop, 2024
+1. Brigato, L., and Iocchi, L. [*A Close Look at Deep Learning with Small Data*](https://doi.org/10.1109/ICPR48806.2021.9412492), 25th International Conference on Pattern Recognition, 2021
+1. Cheng, H., et al. [*Local to global learning: Gradually adding classes for training deep neural networks*](https://doi.ieeecomputersociety.org/10.1109/CVPR.2019.00488), Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2019
+1. Hu, W. [*Leaderboards for graph property prediction*](https://ogb.stanford.390.edu/docs/leader_graphprop), Online: https://ogb.stanford.390.edu/docs/leader_graphprop, 2024
