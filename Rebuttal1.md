@@ -3,36 +3,36 @@ Dear Reviewer,
 Thank you for your positive feedback and for recommending our paper for acceptance. We are pleased you found our methods promising.
 
 # Visuals
-- Fig. 8 Scaling increased
-- Highlights significant, single-digit accuracy gains.
+- Figure 8's scaling has been increased to provide clearer delineation between model performance.
+- It now better highlights significant, single-digit accuracy gains.
 
 # Tables
-- Tables 2 and 3 now included in the main text
-- Clearly demonstrates performance numerically
+- Tables 2 and 3 have been moved from the appendix to the main text.
+- The distinct performance differences are numerically represented in the main text.
 
 # Performance compared to FAIR
 ## NCI1 Performance
-We used GraphSAGE and Graph Isomorphism Network (GIN). 
+We used GraphSAGE and Graph Isomorphism Network (GIN) to evaluate TUDataset datasets. 
 ### GIN
-- 81.2+/- 0.6% accuracy compared to FAIR, 80.0+/- 1.4% [Errica 2020](#references)
-- Recent progress on these problems has slowed [Na 2024](#references)
-- 1% increase is significant
+- EmbCL attained 81.2±0.6% accuracy outcompeting FAIR's 80.0±1.4% [Errica 2020](#references).
+- Recent progress on these benchmarks with light weight models has slowed [Na 2024](#references).
+- While our gains are modest on NCI1, a 1% increase is significant.
 ### GraphSAGE
-- Matched FAIR's perfomance [Errica 2020](#references)
-- Tighter confidence interval
+- Using GraphSAGE, EmbCL's performance (76.1%) matched FAIR's perfomance (76.0%) [Errica 2020](#references)
+- However, while accuracies were similar, EmbCL has a tighter confidence interval (EmbCL: ±1.1%, FAIR: ±1.6%)
 
 # ENZYMES Performance
-We saw few gains regardless of model. 
+We saw few gains regardless of model architecture on the ENZYMES dataset. 
 - We hypothesize in the article that small datasets (100 samples per category) limit curriculum learning's (CL) effectiveness
--Progressive data release fails to provide enough diversity in early training
--Models with insufficient data becoming stuck in local minima are well corrobarated in the literature [Na 2024](#ref) [Brigato 2021](#ref) [Cheng 2019](#ref)
+- Progressive data release fails to provide enough diversity in early training. 
+- Models with insufficient data becoming stuck in local minima are well corrobarated in the literature [Na 2024](#ref) [Brigato 2021](#ref) [Cheng 2019](#ref).
 - ## Reason for Inclusion
-    - Throrough evaluation of EmbCL's performance
-    - Very small datasets are unsuitable for CL, even with EmbCL's ability to identify structural tendencies
-    - Desired to demonstrate where EmbCL does not work, as well as its considerable strength.
+    - We desired to give an honest, throrough evaluation of EmbCL's performance.
+    - Despite our hopes, very small datasets are still unsuitable for CL, even with EmbCL's ability to identify structural tendencies.
+    - The provision of where a method does not work is necessary for rigour.  We show where EmbCL does not work, as well as its considerable strength with more suitable data.
 # ogbg-ppa Performance
 - EmbCL shows strong improvements on large datasets like ogbg-ppa. 
-- Recent progression has stalled on this benchmark [Hu 2024](#references). 
+- Recent progression has stalled on this benchmark in recent years [Hu 2024](#references). 
 - EmbCL beat leading methods by 4% [Hu 2024](#references) (Appendix: Figure 7, Table 2). 
 - EmbCL is most effective on large datasets with high structural complexity. 
 
