@@ -18,12 +18,12 @@ We used GraphSAGE and Graph Isomorphism Network (GIN) to evaluate TUDataset data
 - Recent progress on these benchmarks with light weight models has slowed [Na 2024](#references).
 - While our gains are modest on NCI1, a 1% increase is significant.
 ### GraphSAGE
-- Using GraphSAGE, EmbCL's performance (76.1%) matched FAIR's perfomance (76.0%) [Errica 2020](#references)
-- However, while accuracies were similar, EmbCL has a tighter confidence interval (EmbCL: ±1.1%, FAIR: ±1.6%)
+- Using GraphSAGE, EmbCL's performance (76.1%) matched FAIR's perfomance (76.0%) [Errica 2020](#references).
+- However, while accuracies were similar, EmbCL has a tighter confidence interval (EmbCL: ±1.1%, FAIR: ±1.6%).
 
 # ENZYMES Performance
 We saw few gains regardless of model architecture on the ENZYMES dataset. 
-- We hypothesize in the article that small datasets (100 samples per category) limit curriculum learning's (CL) effectiveness
+- We hypothesize in the article that small datasets (100 samples per category) limit curriculum learning's (CL) effectiveness.
 - Progressive data release fails to provide enough diversity in early training. 
 - Models with insufficient data becoming stuck in local minima are well corrobarated in the literature [Na 2024](#ref) [Brigato 2021](#ref) [Cheng 2019](#ref).
 - ## Reason for Inclusion
