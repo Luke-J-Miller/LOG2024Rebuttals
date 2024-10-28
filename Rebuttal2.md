@@ -49,7 +49,7 @@ The Authors
 
 # References
 1. Chakraborty, S. and Zhang X. [*A new framework for distance and kernel-based metrics in high dimensions*](10.1214/21-EJS1889) Electronic Journal of Statistics, 2021
-1. Chikwendu, I. et al. A comprehensive survey on deep graph representation learning methods, Journal of Artificial Intelligence Research, 2023
-1. Khoshraftar, S. and An A. A survey on graph representation learning methods, ACM Transactions on Intelligent Systems and Technology, 2024
+1. Chikwendu, I. et al. [*A comprehensive survey on deep graph representation learning methods*](https://doi.org/10.1613/jair.1.14768), Journal of Artificial Intelligence Research, 2023
+1. Khoshraftar, S. and An A. [*A survey on graph representation learning methods*](https://doi.org/10.1145/3633518), ACM Transactions on Intelligent Systems and Technology, 2024
 1. Bian, K, and Rahul P. [*Machine learning optimization techniques: a Survey, classification, challenges, and Future Research Issues*](https://link.springer.com/article/10.1007/s11831-024-10110-w), Archives of Computational Methods in Engineering, 2024
 1. Bischl, B et al. [*Hyperparameter optimization: Foundations, algorithms, best practices, and open challenges*]( https://doi.org/10.1002/widm.1484) Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 2023
