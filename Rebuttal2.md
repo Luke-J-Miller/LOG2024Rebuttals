@@ -3,36 +3,36 @@ Dear Reviewer,
 Thank you for your thoughtful review. Your insights are valuable. We address your concerns below.
 
 # Incorporating Features into EmbCL
-Preliminary experiments including node/edge features showed incredibly high, sparse dimensionality
+Preliminary experiments including node/edge features showed incredibly high, sparse dimensionality.
 ## Sparse Embeddings/Vector Dissimilarity
-- Vectors including features are too sparse
-- The sparsity causes vectors to become mutually othogonal which destroys vector similarity measures [Chakraborty 2021](#references)
+- Embedding vectors including features are too sparse. Most elements in an embedding are 0, and vectors share very few dimensions.
+- The sparsity causes vectors to become mutually othogonal which destroys vector similarity measures [Chakraborty 2021](#references).
 ## Agnositicism
 Omitting features provides: 
 - Dataset-Agnosticism
 - Scalability
 - Wide Applicability
 ## Under-researched Structural Similarity Metrics
-- Structural Similarity: significant research gaps [Chikwendu 2023](#references)
-- Feature similarity: well-explored [Khoshraftar 2024](#references)
-- Composite methods using EmbCL with existing, robust feature similarity metrics are our next step
-# R$_c$ Robustness 
-- Consistent across models/datasets.
-- Identifies when learning slows.
-- We limited R$_c$ configurations in this work for clarity
-- We tested 24 schedules in preliminary work (Appx Tab 4)
+- Structural Similarity: There are significant research gaps in characterizing the distribution of graph structures [Chikwendu 2023](#references).
+- Feature similarity: Conversely, measures of feature distibutions are well-explored [Khoshraftar 2024](#references).
+- While the Weisfelier-Leman embedding is incompatible with feature inclusion, bivariate measures of EmbCL and established techniques are promising, and represent one of the next steps in our research.
+# R_c Robustness 
+- R_c is consistent across models/datasets since it does not consider model hyperparameters, confidence scores, or weights, but only the rate of change of the learning rate.
+- It is effective at identifying inflection points where the model is receiving diminishing returns on the current subset of data.
+- We limited R$_c$ configurations in this work for clarity and space considerations. Eager as we were, we could only discuss so many aspects of our research in the limited space of a conference paper.
+- However, we conducted a much more rigorous analysis of how R_c variables affected training in preliminary research. We include 24 tested configurations in the appendix (Appx Tab 4).
 ## Robustness thorugh Simplicity
-- Compares learning rate change between last k epochs and the preceeding k epochs
-- Simple but effective and trasparent
+- The simplicity of the method provides agnosticism. Comparing the change in learning rate change between last k epochs and the preceeding k epochs as a ratio is universally applicable.
+- The ease of implementation provides a transparent metric in a space where explainability is a frequent challenge.
 ## Existing Methods' Challenges
-- Require specific tuning for model confidence and network activation [Bian 2024](#references)
-- Prevents model/dataset agnosticism 
+- While powerful methods exist for evaluating momentum, they require specific tuning for model confidence and network activation between disparate architectures [Bian 2024](#references).
+- This individual tuning prevents fast iteration of models and model-specific hyperparameters and reduces the ability to experiment.
 # Hyperparameter Sensitivity
 Hyperparameter tuning is promising. There are certainly optimal model configurations in conjuntion with EmbCL
 - Hyperparameter tuning will be highly model-specific [Bischl 2023](#references)
-- We sought to demonstrate model agnosticism/wide applicability
-- We include 75 experiments in this work
-- 100's of preliminary explorations are in Appx Table 5
+- We sought to demonstrate model agnosticism/wide applicability, although we are eager to exploit performance gains by optimizing on specific architectures.
+- We include 75 experiments in this work evaluating EmbCL's performance on a wide array of datasets and models.
+- Addtionally, 100's of preliminary explorations are in Appx Table 5
 Full, model-specific hyperparameter sensitivity analysis will give insights. We plan to explore this soon.
 
 # Figure Quality
