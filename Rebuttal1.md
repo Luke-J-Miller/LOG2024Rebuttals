@@ -14,26 +14,26 @@ Thank you for your positive feedback and for recommending our paper for acceptan
 ## NCI1 Performance
 We used GraphSAGE and Graph Isomorphism Network (GIN). 
 ### GIN
-- 81.2+/- 0.6% accuracy compared to FAIR, 80.0+/- 1.4% [2](#references)
-- Recent progress on these problems has slowed [1](#references)
+- 81.2+/- 0.6% accuracy compared to FAIR, 80.0+/- 1.4% [Errica 2020](#references)
+- Recent progress on these problems has slowed [Na 2024](#references)
 - 1% increase is significant
 ### GraphSAGE
-- Matched FAIR's perfomance [2](#references)
+- Matched FAIR's perfomance [Errica 2020](#references)
 - Tighter confidence interval
 
 # ENZYMES Performance
 We saw few gains regardless of model. 
 - We hypothesize in the article that small datasets (100 samples per category) limit curriculum learning's (CL) effectiveness
 -Progressive data release fails to provide enough diversity in early training
--Models with insufficient data becoming stuck in local minima are well corrobarated in the literature [1](#ref) [3](#ref) [4](#ref)
+-Models with insufficient data becoming stuck in local minima are well corrobarated in the literature [Na 2024](#ref) [Brigato 2021](#ref) [Cheng 2019](#ref)
 - ## Reason for Inclusion
     - Throrough evaluation of EmbCL's performance
     - Very small datasets are unsuitable for CL, even with EmbCL's ability to identify structural tendencies
     - Desired to demonstrate where EmbCL does not work, as well as its considerable strength.
 # ogbg-ppa Performance
 - EmbCL shows strong improvements on large datasets like ogbg-ppa. 
-- Recent progression has stalled on this benchmark [5](#references). 
-- EmbCL beat leading methods by 4% [6](#references) (Appendix: Figure 7, Table 2). 
+- Recent progression has stalled on this benchmark [Hu 2024](#references). 
+- EmbCL beat leading methods by 4% [Hu 2024](#references) (Appendix: Figure 7, Table 2). 
 - EmbCL is most effective on large datasets with high structural complexity. 
 
 Your critical feedback significantly strengthens our work. Thank you..
