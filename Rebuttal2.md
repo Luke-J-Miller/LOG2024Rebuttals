@@ -6,8 +6,7 @@ Thank you for your thoughtful review. Your insights are valuable. We address you
 Preliminary experiments including node/edge features showed incredibly high, sparse dimensionality
 ## Sparse Embeddings/Vector Dissimilarity
 - Vectors including features are too sparse
-- They become mutually othogonal
-- Including features destroys vector similarity measures
+- The sparsity causes vectors to become mutually othogonal which destroys vector similarity measures [Chakraborty 2021](#references)
 ## Agnositicism
 Omitting features provides: 
 - Dataset-Agnosticism
@@ -24,13 +23,13 @@ Omitting features provides:
 - We tested 24 schedules in preliminary work (Appx Tab 4)
 ## Robustness thorugh Simplicity
 - Compares learning rate change between last k epochs and the preceeding k epochs
-- Simple but effective and trasparent.
+- Simple but effective and trasparent
 ## Existing Methods' Challenges
 - Require specific tuning for model confidence and network activation [Bian 2024](#references)
 - Prevents model/dataset agnosticism 
 # Hyperparameter Sensitivity
 Hyperparameter tuning is promising. There are certainly optimal model configurations in conjuntion with EmbCL
-- Hyperparameter tuning will be highly model-specific
+- Hyperparameter tuning will be highly model-specific [Bischl 2023](#references)
 - We sought to demonstrate model agnosticism/wide applicability
 - We include 75 experiments in this work
 - 100's of preliminary explorations are in Appx Table 5
@@ -49,6 +48,8 @@ Best regards,
 The Authors
 
 # References
+1. Chakraborty, S. and Zhang X. [*A new framework for distance and kernel-based metrics in high dimensions*](10.1214/21-EJS1889) Electronic Journal of Statistics, 2021
 1. Chikwendu, I. et al. A comprehensive survey on deep graph representation learning methods, Journal of Artificial Intelligence Research, 2023
 1. Khoshraftar, S. and An A. A survey on graph representation learning methods, ACM Transactions on Intelligent Systems and Technology, 2024
-1. Bian, K, and Rahul P. Machine learning optimization techniques: a Survey, classification, challenges, and Future Research Issues, Archives of Computational Methods in Engineering, 2024
+1. Bian, K, and Rahul P. [*Machine learning optimization techniques: a Survey, classification, challenges, and Future Research Issues*](https://link.springer.com/article/10.1007/s11831-024-10110-w), Archives of Computational Methods in Engineering, 2024
+1. Bischl, B et al. [*Hyperparameter optimization: Foundations, algorithms, best practices, and open challenges*]( https://doi.org/10.1002/widm.1484) Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery, 2023
