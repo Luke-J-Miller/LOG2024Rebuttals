@@ -32,7 +32,7 @@ We saw few gains regardless of model.
     - Desired to demonstrate where EmbCL does not work, as well as its considerable strength.
 # ogbg-ppa Performance
 - EmbCL shows strong improvements on large datasets like ogbg-ppa. 
-- Recent progression has stalled onthis benchmark [5](#references). 
+- Recent progression has stalled on this benchmark [5](#references). 
 - EmbCL beat leading methods by 4% [6](#references) (Appendix: Figure 7, Table 2). 
 - EmbCL is most effective on large datasets with high structural complexity. 
 
