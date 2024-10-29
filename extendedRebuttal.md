@@ -63,53 +63,80 @@ The decision to rely on structure-only embeddings offers several benefits, parti
 
 Additionally, structure-only embeddings enhance scalability, as the WL kernel’s linear time complexity allows EmbCL to process large datasets efficiently without the added computational overhead of high-dimensional feature vectors. This efficiency is especially valuable for graph-based tasks where scalability and performance consistency are paramount. Our choice of structure-only embeddings thus aligns with EmbCL’s design goals, enabling it to balance robustness, efficiency, and adaptability across varied datasets.
 
-# Section 3: Curriculum Learning Methodology and Scheduling
-## Adaptive Data Release Schedules
+### Section 3: Curriculum Learning Methodology and Scheduling
+#### Adaptive Data Release Schedules
 
-- Initial 50-70% data release.
-- Cumulative Improvement Ratio (CIR) prevents local minima.
-## Data Release Strategies and Performance
+To address the reviewers' questions about our data release strategy, we provide an expanded explanation of EmbCL’s adaptive data release schedule. The design of our schedule was informed by literature on curriculum learning, which highlights the importance of progressively exposing the model to increasingly complex data samples to enhance stability and prevent early-stage overfitting (e.g., Na et al., 2024; Cheng et al., 2019). EmbCL begins with an initial data release of 50-70% of the most representative, structurally simpler samples within each classification category. This initial release allows the model to establish a foundational understanding of basic graph structures before encountering more complex samples.
 
-- Table summarizing EmbCL I, II, III schedules.
-- Comparison with random vs. CIR-guided release.
-## Illustrative Figures
+To prevent models from becoming trapped in local minima during training, we implemented a Cumulative Improvement Ratio (CIR) to guide the timing of subsequent data releases. CIR measures the model’s improvement rate over a specified number of epochs, enabling dynamic data releases based on genuine performance gains. If the model’s improvement rate exceeds a set threshold, additional data is incrementally introduced. This strategy ensures that EmbCL’s curriculum progresses only when the model is effectively learning from its current data subset, thereby enhancing model robustness and performance stability.
 
-- Improved Figures 3 and 5 showing CIR impact.
-# Section 4: Robustness and Sensitivity Analysis
-## Hyper-parameter Sensitivity
+#### Data Release Strategies and Performance
 
-- Limited exploration due to space.
-- Preliminary findings in Appendix Table 4.
-## Future Robustness Studies
+In our expanded experiments, we compared several data release schedules—EmbCL I, II, and III—with differing initial release sizes, CIR thresholds, and release increments. Table 4 (in the appendix) summarizes these schedules and their respective performance results, offering insights into the optimal configurations for EmbCL’s curriculum learning approach. EmbCL I, which uses a 50% initial release with smaller, 10% increments, demonstrated the best balance of stability and performance gains across diverse datasets. In contrast, EmbCL III, with a larger 70% initial release and a 20% increment, showed faster convergence but slightly reduced generalizability, as it exposed the model to complex samples earlier.
 
-- Planned in-depth sensitivity analysis.
-- Emphasize EmbCL’s simplicity for robustness.
-## Updated Figures and Tables
+We also conducted a comparison with a random data release approach to assess the impact of CIR-guided releases on model performance. Our findings indicate that the CIR-guided strategy consistently outperformed random release schedules, particularly on complex datasets like D&D. The structured progression of CIR-guided releases allows EmbCL to avoid overexposure to complex data early on, which aligns with curriculum learning principles and ensures a stable improvement trajectory.
 
-- Specific improvements in appendix clarity.
-# Section 5: Improved Abstract, Motivation, and Flow
-## Expanded Abstract
+#### Illustrative Figures
 
-- Added limitations in prior methods.
-- Highlight scalability and structural challenges.
-## Justification for WL Kernels
+To visually represent the impact of CIR-guided data scheduling on EmbCL’s performance, we have updated Figures 3 and 5. These figures now clearly illustrate how CIR-guided releases prevent premature saturation of model learning capacity. Figure 3 demonstrates the performance differences between EmbCL’s adaptive scheduling and random data release, showing how the model achieves higher accuracy and stability over time with CIR guidance. Figure 5 further emphasizes this point by illustrating CIR-based incremental improvements, highlighting EmbCL’s ability to dynamically adjust data release based on model readiness.
 
-- Compare with random walks and subgraph methods.
-- References on WL’s efficiency and robustness.
-## Flow and Cohesion Improvements
+Together, these updates to Figures 3 and 5 provide a more accessible and illustrative view of CIR’s role in EmbCL’s curriculum learning methodology, underscoring its importance in enhancing model performance and adaptability.
 
-- Clarified methodology and related work.
-- Revised Figure 3 and 5 intros.
-# Section 6: Improved Figure Quality and Presentation
-## Enhanced Figure Quality
+### Section 4: Robustness and Sensitivity Analysis
+#### Hyper-parameter Sensitivity
 
-- Higher DPI, balanced layout, improved text size.
-- Improved color and contrast for accessibility.
-## Tabular Enhancements
+We appreciate the reviewers’ interest in EmbCL’s sensitivity to hyper-parameters and provide additional details here, with preliminary findings available in Appendix Table 4. Due to space limitations in the original submission, we included only a limited exploration of hyper-parameter configurations. However, we conducted several preliminary tests to gauge EmbCL’s robustness across different parameter settings, focusing on the Cumulative Improvement Ratio (CIR) thresholds, data release increments, and patience values.
 
-- Moved Tables 2 and 3 to main text.
-- Improved formatting for performance comparisons.
-# Conclusion and Future Work
-- Unified Response addresses all reviewer points.
-- Future Exploration in feature embedding and sensitivity.
-- Thanks to reviewers for constructive feedback.
+These initial findings reveal that EmbCL’s performance is generally stable across a range of CIR thresholds, with only minor variations in accuracy when the threshold is adjusted within a reasonable range. Similarly, the release increment size shows a consistent impact on training dynamics: smaller increments (e.g., 10%) yield smoother learning curves, while larger increments (e.g., 20%) accelerate training but may reduce generalizability. These findings underscore EmbCL’s adaptability to different parameter settings, although further exploration is required to optimize configurations fully.
+
+#### Future Robustness Studies
+
+In response to reviewer comments, we are planning an in-depth sensitivity analysis in future work to explore EmbCL’s robustness across a wider array of models and datasets. This planned study will investigate the interaction of key hyper-parameters (e.g., CIR thresholds, initial release size, and increment size) with different types of graph structures, providing more granular insights into optimal configurations for EmbCL in various scenarios.
+
+We emphasize that EmbCL’s simplicity is a deliberate design choice aimed at enhancing robustness and scalability across diverse datasets. By focusing on a straightforward, structure-based curriculum learning approach, EmbCL reduces dependence on fine-tuning and complex parameter adjustments, allowing it to operate effectively across a broad range of tasks with minimal customization. This robustness supports EmbCL’s potential as a flexible, model-agnostic solution for curriculum learning in graph neural networks, capable of achieving consistent performance without extensive hyper-parameter tuning.
+
+#### Updated Figures and Tables
+
+To provide a clearer view of our robustness and sensitivity findings, we have made specific improvements to the figures and tables in the appendix. Appendix Table 4 now includes a more comprehensive summary of hyper-parameter sensitivity across different configurations, detailing how changes in CIR thresholds, release sizes, and increment values affect model performance. We have also enhanced the clarity and formatting of these tables to ensure that reviewers can easily interpret the results. 
+
+These updates in the appendix offer a more detailed and transparent view of EmbCL’s performance across various parameter settings, underscoring our commitment to exploring and improving the robustness of EmbCL for practical applications.
+
+### Section 5: Improved Abstract, Motivation, and Flow
+#### Expanded Abstract
+
+We have revised the abstract to address the limitations in existing curriculum learning methods, particularly for graph-level tasks. The expanded abstract now highlights the primary challenges that EmbCL is designed to overcome: the scalability issues and structural complexity limitations found in current approaches. Traditional curriculum learning methods often struggle to process large graph datasets efficiently or to capture the nuanced structural details critical for accurate predictions. By introducing a structure-based curriculum learning framework that scales linearly, EmbCL addresses these gaps, offering a practical solution for graph neural networks across varied datasets.
+
+This expanded abstract emphasizes EmbCL’s adaptability and performance on large-scale graph datasets, noting that the method not only improves accuracy but also provides a stable and efficient approach to managing structural complexity in graph data. This added context provides a clearer introduction to the purpose and significance of our work, offering readers an immediate understanding of the paper’s core contributions.
+
+#### Justification for WL Kernels
+
+To further clarify the methodological choices behind EmbCL, we have expanded our justification for using Weisfeiler-Leman (WL) graph kernels as the core embedding method. We compared WL kernels with alternative approaches such as random walks and subgraph matching, both of which were considered but ultimately not selected due to their limitations. Random walk-based embeddings, for instance, introduce stochasticity that can lead to inconsistent representations, particularly in highly diverse datasets. Subgraph methods, while effective in capturing fine-grained structural details, often exhibit quadratic or cubic time complexity, making them impractical for large datasets.
+
+WL kernels, on the other hand, offer a deterministic and efficient approach to embedding graph structures, with proven robustness in handling a variety of graph types (e.g., Morris et al., 2023; Fürer, 2017). This approach aligns well with EmbCL’s goals of scalability and consistency, enabling the model to effectively manage diverse graph structures while maintaining linear time complexity. By leveraging WL kernels, EmbCL avoids the limitations of alternative methods, providing a streamlined, reliable way to create structurally rich embeddings suitable for curriculum learning.
+
+#### Flow and Cohesion Improvements
+
+In response to reviewers’ feedback on the clarity and flow of the paper, we have made several revisions to improve the logical progression of ideas throughout the methodology and related work sections. Specifically, we clarified the role of contrastive learning within EmbCL, ensuring that its integration into the curriculum learning framework is explained cohesively from the start. The methodology section now introduces contrastive learning principles in a way that connects naturally to the curriculum learning structure, providing readers with a smoother and more intuitive understanding of EmbCL’s design.
+
+Additionally, we revised the introductions to Figures 3 and 5 to better contextualize their purpose within the flow of the paper. These figures now include updated captions and clearer explanations, helping readers quickly grasp the significance of the visual information presented. These adjustments improve the overall coherence of the paper, making EmbCL’s methodology and contributions more accessible and logically structured.
+
+### Section 6: Improved Figure Quality and Presentation
+#### Enhanced Figure Quality
+
+In response to the reviewers’ feedback on visual clarity, we have made several adjustments to improve the quality and accessibility of our figures. All key figures, including Figures 3, 5, and 8, have been enhanced with higher DPI and a balanced layout, ensuring that visual elements are clear and easy to interpret at any viewing scale. We have also increased the text size and optimized the color scheme to improve readability, particularly for those viewing the document on screens or in printed form.
+
+Additionally, the color contrast within the figures has been adjusted to meet accessibility standards, making the visual information easier to discern for individuals with color vision deficiencies. These adjustments enhance the overall accessibility of the paper, ensuring that the figures communicate EmbCL’s results clearly and effectively to a wide audience.
+
+#### Tabular Enhancements
+
+We have also made significant improvements to the presentation of tabular data within the paper. Tables 2 and 3, which previously appeared in the appendix, have been moved to the main text to provide more immediate access to critical performance comparisons across datasets. This relocation allows readers to quickly reference the numerical results supporting our claims without navigating to supplemental sections.
+
+To improve the readability of these tables, we have updated the formatting to ensure clear alignment and spacing between entries, making it easier to compare model performances across different configurations. These changes enhance the clarity and usability of the tables, supporting a more streamlined presentation of EmbCL’s performance metrics and making the results accessible at a glance.
+
+### Conclusion and Future Work
+
+This unified response addresses each point raised by the reviewers in detail, covering all major aspects of EmbCL’s methodology, performance, and presentation. We have carefully reviewed and incorporated feedback to enhance the clarity, robustness, and accessibility of our work, making significant revisions across performance analysis, embedding choices, curriculum learning strategy, and visual presentation.
+
+Looking ahead, we plan to further explore several promising areas of future work. One area of interest is the integration of feature embeddings alongside structural embeddings to expand EmbCL’s applicability across datasets where node or edge features provide critical information. Additionally, we are committed to conducting an in-depth sensitivity analysis to refine EmbCL’s hyper-parameter configurations and assess its robustness across different GNN architectures and dataset types.
+
+We are sincerely grateful to the reviewers for their constructive feedback, which has been instrumental in strengthening our paper. Their insights have allowed us to address important methodological and presentation-related aspects, ensuring that EmbCL is both practically robust and theoretically grounded. We believe these improvements make our paper well-suited for inclusion in the 2024 Learning on Graphs Conference.
