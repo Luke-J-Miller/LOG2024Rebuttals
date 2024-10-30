@@ -4,7 +4,7 @@ The recently extended character limit provided by the Learning on Graphs Confere
 In this rebuttal, we address each major theme raised in the reviews:
 
 1. [Choice of Methodology: Rationale for Weisfeiler-Lehman Graph Kernels](#choice-of-methodology) (Reviewer h7fx)
-1. [Performance Comparison Against FAIR](#perfomance-comparison-against-fair) (Reviewer ua2Y)
+1. [Performance Comparison Against FAIR](#performance-comparison-against-fair) (Reviewer ua2Y)
 1. [Exclusion of Features: Rationale for EmbCL only Measuring Structures](#exclusion-of-features) (Reviewer nS1o)
 1. [Adaptive Data Release: Robustness of $R_c$ Metric](#adaptive-data-release) (Reviewer nS1o)
 1. [Hyperparameter Sensitivity](#hyperparameter-sensitivity) (Reviewer nS1o)
