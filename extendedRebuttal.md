@@ -4,7 +4,7 @@ The recently extended character limit provided by the Learning on Graphs Confere
 In this rebuttal, we address each major theme raised in the reviews:
 
 1. [Choice of Methodology: Rationale for Weisfeiler-Lehman Graph Kernels](#choice-of-methodology) (Reviewer h7fx)
-1. [Performance Analysis: Similarities to FAIR](#perfomance-analysis-vs-fair) (Reviewer ua2Y)
+1. [Performance Comparison Against FAIR](#perfomance-comparison-against-fair) (Reviewer ua2Y)
 1. [Exclusion of Features: Rationale for EmbCL only Measuring Structures](#exclusion-of-features) (Reviewer nS1o)
 1. [Adaptive Data Release: Robustness of $R_c$ Metric](#adaptive-data-release) (Reviewer nS1o)
 1. [Hyperparameter Sensitivity](#hyperparameter-sensitivity) (Reviewer nS1o)
@@ -39,7 +39,7 @@ By leveraging WL kernels, EmbCL benefits from a streamlined, reliable embedding 
 In summary, the WL kernel’s efficiency and robustness in generating deterministic structural embeddings align closely with EmbCL’s objectives. This approach not only avoids the limitations observed in random walk and subgraph matching methods but also reinforces EmbCL’s scalability and consistency, making it an optimal choice for embedding in curriculum learning contexts where structural information and computational efficiency are paramount.
 
 
-# Performance Analysis vs FAIR
+# Performance Comparison Against FAIR
 
 In response to Reviewer ua2Y's observations regarding EmbCL’s variable performance across datasets, we present a comprehensive analysis of EmbCL’s results on D\&D, ENZYMES, NCI1, and ogbg-ppa. Each dataset presents distinct structural challenges and characteristics, providing a basis for evaluating EmbCL’s curriculum learning strategy in diverse settings.
 
@@ -226,3 +226,4 @@ We are sincerely grateful to the reviewers for their constructive and insightful
 - Na, Marwa, Kamel Yamani, Lynda Lhadj, and Riyadh Baghdadi. "Curriculum Learning for Small Code Language Models." In *Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)*, pp. 531-542. 2024.
 
 - Wills, Peter, and François G. Meyer. "Metrics for graph comparison: a practitioner’s guide." *Plos one* 15, no. 2 (2020): e0228728.
+  
